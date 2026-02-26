@@ -242,14 +242,19 @@
                 max-width: 350px;
             }
             
+           /* Marketplace Icon Fix - Ultra Black Premium */
             .market-icon {
-                width: 16px;
+                width: 18px;        /* kecil & presisi */
                 height: auto;
-                margin-right: 8px;
+                margin-right: 10px;
                 filter: brightness(0) invert(1);
-                opacity: 0.9;
+                opacity: 0.95;
+                transition: 0.3s ease;
             }
-                
+
+            .marketplace-btn:hover .market-icon {
+                opacity: 1;
+            }            
         }
     </style>
 </head>
