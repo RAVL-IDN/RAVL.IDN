@@ -47,32 +47,26 @@
         }
 
         /* Background Setup */
-        .landing-container {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-            
-            /* Background Image with Overlay */
-            background: linear-gradient(
-                var(--color-bg-overlay), 
-                var(--color-bg-overlay)
-            ), url('https://images.unsplash.com/photo-1595425970339-27414395c085?q=80&w=1920&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        .landing-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1595425970339-27414395c085?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+            filter: blur(8px);
+            transform: scale(1.1);
+            z-index: 0;
         }
+        .landing-container::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, #ffffff, #d4af37);
+            z-index: 1;
 
         /* Content Wrapper */
         .content {
+            position: relative;
             z-index: 2;
-            max-width: 800px;
-            animation: fadeIn 1.5s ease-out;
         }
 
         /* Typography */
@@ -87,6 +81,11 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .brand-logo {
+            width: 90px;
+            margin-bottom: 15px;
+            opacity: 0.85;
         }
 
         .tagline {
@@ -111,6 +110,10 @@
             margin-left: auto;
             margin-right: auto;
             opacity: 0.9;
+            text-align: justify;
+            text-justify: inter-word;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
         }
 
         /* CTA Section */
