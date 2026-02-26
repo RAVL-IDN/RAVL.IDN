@@ -47,23 +47,38 @@
         }
 
         /* Background Setup */
+        .landing-container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+        
         .landing-container::before {
             content: "";
             position: absolute;
             inset: 0;
             background: url('PAGE GEDE.jpg') center/cover no-repeat;
-            filter: blur(8px);
+            filter: blur(5px);
             transform: scale(1.1);
             z-index: 0;
         }
+
         .landing-container::after {
             content: "";
             position: absolute;
             inset: 0;
             background: linear-gradient(
-                rgba(0,0,0,0.6),
+                rgba(0,0,0,0.55),
                 rgba(0,0,0,0.75)
+            );
             z-index: 1;
+        }
 
         /* Content Wrapper */
         .content {
@@ -84,10 +99,17 @@
             -webkit-text-fill-color: transparent;
             text-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
+        
         .brand-logo {
-            width: 100px;      
-            height: auto;      
-            object-fit: contain;
+            width: 100px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.5s ease-out;
         }
 
         .tagline {
@@ -225,7 +247,7 @@
     <div class="landing-container">
         <div class="content">
             <!-- 1. Brand Name -->
-            <img src="logo RAVL Slogan Putih 50px.png" alt="RAVL Logo" class="brand-logo">
+            <img src="logo RAVL PUTIH.png" alt="RAVL Logo" class="brand-logo">
             
             <!-- 2. Tagline -->
             <h2 class="tagline">Essence Over Excess</h2>
