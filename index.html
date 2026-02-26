@@ -69,6 +69,15 @@
             z-index: 0;
         }
 
+         @media (max-width: 768px) {
+             .landing-container::before {
+                position: fixed;
+                inset: 0;
+                transform: scale(1.02);
+                filter: blur(5px);
+             }
+         }
+
         .landing-container::after {
             content: "";
             position: absolute;
