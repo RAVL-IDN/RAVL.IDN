@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAVL - Essence Over Excess</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --color-bg-overlay: rgba(0, 0, 0, 0.65);
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #e0e0e0;
+            --color-btn-bg: #1a1a1a;
+            --color-btn-hover: #2d2d2d;
+            --color-accent-glow: rgba(255, 255, 255, 0.3);
+            --font-main: 'Poppins', sans-serif;
+            --spacing-unit: 1rem;
+            --border-radius: 16px;
+            --transition-speed: 0.3s;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: #000;
+            color: var(--color-text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        /* Background Setup */
+        .landing-container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            
+            /* Background Image with Overlay */
+            background: linear-gradient(
+                var(--color-bg-overlay), 
+                var(--color-bg-overlay)
+            ), url('https://images.unsplash.com/photo-1595425970339-27414395c085?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Content Wrapper */
+        .content {
+            z-index: 2;
+            max-width: 800px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Typography */
+        .brand-name {
+            font-size: 6rem;
+            font-weight: 700;
+            letter-spacing: 0.5rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            line-height: 1;
+            background: linear-gradient(to right, #fff, #ccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.2rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 10px 20px;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--color-text-secondary);
+            margin-bottom: 3.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* Button Group */
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Button Styles */
+        .marketplace-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            background-color: var(--color-btn-bg);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all var(--transition-speed) ease;
+            min-width: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marketplace-btn i {
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        /* Hover Effects */
+        .marketplace-btn:hover {
+            background-color: var(--color-btn-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px var(--color-accent-glow);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        .marketplace-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            .brand-name {
+                font-size: 5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .landing-container {
+                padding: 1.5rem;
+            }
+
+            .brand-name {
+                font-size: 3.5rem;
+                letter-spacing: 0.2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+                padding: 8px 16px;
+            }
+
+            .description {
+                font-size: 1rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .marketplace-btn {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="landing-container">
+        <div class="content">
+            <!-- 1. Brand Name -->
+            <h1 class="brand-name">RAVL</h1>
+            
+            <!-- 2. Tagline -->
+            <h2 class="tagline">Essence Over Excess</h2>
+            
+            <!-- 3. Description -->
+            <p class="description">
+                RAVL adalah wewangian yang dirancang untuk individu modern yang percaya bahwa scent adalah identitas personal. 
+                Kami merangkum kemewahan dalam bentuk yang ringkas, menciptakan aroma yang classy, expressive, dan memorable—sempurna untuk pria & wanita masa kini.
+            </p>
+
+            <!-- 4. CTA Section -->
+            <div class="cta-section">
+                <p class="cta-text">Temukan signature scent kamu sekarang</p>
+                
+                <!-- 5. Marketplace Buttons -->
+                <div class="button-group">
+                    <a href="#" class="marketplace-btn">
+                        <i class="fa-brands fa-shopee"></i> Shopee
+                    </a>
+                    <a href="#" class="marketplace-btn">
+                        <i class="fa-brands fa-tiktok"></i> TikTok Shop
+                    </a>
+                    <a href="#" class="marketplace-btn">
+                        <i class="fa-solid fa-store"></i> Tokopedia
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
